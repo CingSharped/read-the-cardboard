@@ -1,0 +1,38 @@
+nav {
+
+  height: 100px;
+  background-color:gray;
+  color: rgb(33, 33, 33);
+  width: 100%;
+  top: 0;
+  left: 0;
+  position: absolute;
+
+}
+
+
+nav a:hover {
+  background-color: #ddd;
+}
+
+nav a.active {
+  background: linear-gradient(to right, #c404ff, #6f027d);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+nav a {
+  color: black;
+  padding: 30px;
+}
+
+
+
+.nav-links {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  list-style: none;
+  font-size: 25px;
+  font-weight: 800;
+}

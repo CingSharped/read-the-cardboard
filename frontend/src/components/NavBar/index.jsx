@@ -1,12 +1,21 @@
 import React from 'react'
-import { Outlet } from 'react-router-dom';
+import { Outlet, NavLink, useNavigate } from 'react-router-dom';
+import { UserDisplay } from '../'
+import './style.css'
 
 const NavBar = () => {
   return (
-    <>
-      <h2>NavBar</h2>
+    <header>
+      <nav>
+        <div className='nav-links'>
+          <UserDisplay />
+
+          <NavLink to="/">Home</NavLink>
+          <NavLink to='/dashboard'>Dashboard</NavLink>
+        </div>
+      </nav>
       <Outlet />
-    </>
+    </header>
   );
 }
 

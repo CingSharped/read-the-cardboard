@@ -6,9 +6,7 @@ const getCardImages = async () => {
     .get("https://db.ygoprodeck.com/api/v7/cardinfo.php")
     .then((response) => {
       const data = response.data.data;
-      // Store the data in your own API
 
-      // Download all the card images
       data.forEach((card) => {
 
       card.card_images.forEach((image, index) => {
@@ -18,7 +16,7 @@ const getCardImages = async () => {
           .get(imageUrl, { responseType: "stream" })
           .then((response) => {
             response.data.pipe(
-              fs.createWriteStream("card-images/" + imageName)
+              fs.createWriteStream("database/card-images/" + imageName)
             );
           })
           .catch((error) => console.error(error));
@@ -29,5 +27,5 @@ const getCardImages = async () => {
     })
     .catch((error) => console.error(error));
 };
-fs.mkdirSync("card-images");
+fs.mkdirSync("database/card-images");
 getCardImages();
